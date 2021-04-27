@@ -1,5 +1,6 @@
 const args = process.argv.slice(2)
 var names = ["Zero","One", "Two","Three","Four", "Five" ,"Six" ,"Seven","Eight", "Nine"]
+var array=[];
 
 function getNames(num) 
 {
@@ -12,9 +13,12 @@ function getNames(num)
 		output.push(names[pos]);
 	}
 	var x = output.join('');
-	console.log(x)
 	return x;
 }
-getNames(args[0])
-
-
+for (const index in args) 
+{ 
+	var num = args[index];
+	var n= getNames(num);
+	array.push(n);
+}
+console.log(array.toString());
